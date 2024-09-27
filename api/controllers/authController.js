@@ -5,12 +5,12 @@ const jwt = require("jsonwebtoken");
 const register = async (req, res) => {
   const { first_name, last_name, email, password } = req.body;
   if (!first_name || !last_name || !email || !password) {
-    return res.status(400).json({ msg: "Please fill all fields" });
+    return res.status(400).json({ message: "Please fill all fields" });
   }
 
   const foundUser = await User.findOne({ email }).exec();
   if (foundUser) {
-    return res.status(401).json({ msg: "User already exists" });
+    return res.status(401).json({ message: "User already exists" });
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -56,18 +56,18 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
-    return res.status(400).json({ msg: "Please fill all fields" });
+    return res.status(400).json({ message: "Please fill all fields" });
   }
 
   const foundUser = await User.findOne({ email }).exec();
   if (!foundUser) {
-    return res.status(401).json({ msg: "User Not exists" });
+    return res.status(401).json({ message: "User Not exists" });
   }
 
   const matchPassword = await bcrypt.compare(password, foundUser.password);
 
   if (!matchPassword) {
-    return res.status(401).json({ msg: "Wrong Password " });
+    return res.status(401).json({ message: "Wrong Password " });
   }
 
   const accessToken = jwt.sign(

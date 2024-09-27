@@ -1,0 +1,87 @@
+/* Form Container */
+.form {
+  margin: 2rem auto;
+  max-width: 24rem; /* Slightly wider for more breathing room */
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+}
+
+.form fieldset {
+  border: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.form label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  display: block;
+  color: #333;
+}
+
+.form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  transition: border 0.3s, background-color 0.3s;
+}
+
+.form input:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.form button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.form button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #666;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.form button[type="button"] {
+  background-color: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.form button[type="button"]:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.form input:focus,
+.form button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
